@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ApuestasPolla.Models.EquipoPartido>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEquipoPartido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipo.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Partido.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puntos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Goles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GolesContra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEquipoPartido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Partido.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puntos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Goles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GolesContra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ubicacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

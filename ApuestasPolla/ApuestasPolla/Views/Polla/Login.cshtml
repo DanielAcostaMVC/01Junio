@@ -1,0 +1,29 @@
+﻿@inherits System.Web.Mvc.WebViewPage<ApuestasPolla.Objetos.Usuario>
+@*@{
+    ViewBag.Title = "Login";
+}*@
+
+@{
+    Layout = "";
+}
+
+<style>
+    .InformacionUsuario {
+        background: white;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        width: 900px;
+        height: 400px;
+    }
+</style>
+
+<div class="InformacionUsuario">
+    <h2 style="font-family:'Sofia'">Usuario</h2>
+    <ul style="float:left; color:black">
+        <li>Nombre: @Model.Nombre</li>
+        <li>Sexo: @Model.Sexo</li>
+        <li>Nit: @Model.Id</li>
+    </ul>
+</div>
+
+

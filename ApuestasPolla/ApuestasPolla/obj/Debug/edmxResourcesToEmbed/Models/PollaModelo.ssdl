@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MVCpruebasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MVCpruebasModelStoreContainer">
+    <EntitySet Name="ApuestaPartido" EntityType="MVCpruebasModel.Store.ApuestaPartido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Equipo" EntityType="MVCpruebasModel.Store.Equipo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EquipoPartido" EntityType="MVCpruebasModel.Store.EquipoPartido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FasePartido" EntityType="MVCpruebasModel.Store.FasePartido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grupo" EntityType="MVCpruebasModel.Store.Grupo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Partido" EntityType="MVCpruebasModel.Store.Partido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PuntajeApuesta" EntityType="MVCpruebasModel.Store.PuntajeApuesta" store:Type="Tables" store:Schema="dbo" store:Name="PuntajeApuesta">
+      <DefiningQuery>SELECT 
+      [PuntajeApuesta].[IdTipoPuntaje] AS [IdTipoPuntaje], 
+      [PuntajeApuesta].[IdApuestaPartido] AS [IdApuestaPartido]
+      FROM [dbo].[PuntajeApuesta] AS [PuntajeApuesta]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PuntajePartido" EntityType="MVCpruebasModel.Store.PuntajePartido" store:Type="Tables" store:Schema="dbo" store:Name="PuntajePartido">
+      <DefiningQuery>SELECT 
+      [PuntajePartido].[IdTipoPuntaje] AS [IdTipoPuntaje], 
+      [PuntajePartido].[IdEquipoPartido] AS [IdEquipoPartido]
+      FROM [dbo].[PuntajePartido] AS [PuntajePartido]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdiagrams" EntityType="MVCpruebasModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoPuntaje" EntityType="MVCpruebasModel.Store.TipoPuntaje" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="MVCpruebasModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ApuestaPartido_Partido" Association="MVCpruebasModel.Store.FK_ApuestaPartido_Partido">
+      <End Role="Partido" EntitySet="Partido" />
+      <End Role="ApuestaPartido" EntitySet="ApuestaPartido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApuestaPartido_Usuario" Association="MVCpruebasModel.Store.FK_ApuestaPartido_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ApuestaPartido" EntitySet="ApuestaPartido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_Grupo" Association="MVCpruebasModel.Store.FK_Equipo_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Equipo" EntitySet="Equipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquipoPartido_Equipo" Association="MVCpruebasModel.Store.FK_EquipoPartido_Equipo">
+      <End Role="Equipo" EntitySet="Equipo" />
+      <End Role="EquipoPartido" EntitySet="EquipoPartido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquipoPartido_Partido" Association="MVCpruebasModel.Store.FK_EquipoPartido_Partido">
+      <End Role="Partido" EntitySet="Partido" />
+      <End Role="EquipoPartido" EntitySet="EquipoPartido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Partido_FasePartido" Association="MVCpruebasModel.Store.FK_Partido_FasePartido">
+      <End Role="FasePartido" EntitySet="FasePartido" />
+      <End Role="Partido" EntitySet="Partido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PuntajeApuesta_ApuestaPartido" Association="MVCpruebasModel.Store.FK_PuntajeApuesta_ApuestaPartido">
+      <End Role="ApuestaPartido" EntitySet="ApuestaPartido" />
+      <End Role="PuntajeApuesta" EntitySet="PuntajeApuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PuntajeApuesta_TipoPuntaje" Association="MVCpruebasModel.Store.FK_PuntajeApuesta_TipoPuntaje">
+      <End Role="TipoPuntaje" EntitySet="TipoPuntaje" />
+      <End Role="PuntajeApuesta" EntitySet="PuntajeApuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PuntajePartido_ApuestaPartido" Association="MVCpruebasModel.Store.FK_PuntajePartido_ApuestaPartido">
+      <End Role="EquipoPartido" EntitySet="EquipoPartido" />
+      <End Role="PuntajePartido" EntitySet="PuntajePartido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PuntajePartido_TipoPuntaje" Association="MVCpruebasModel.Store.FK_PuntajePartido_TipoPuntaje">
+      <End Role="TipoPuntaje" EntitySet="TipoPuntaje" />
+      <End Role="PuntajePartido" EntitySet="PuntajePartido" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ApuestaPartido">
+    <Key>
+      <PropertyRef Name="IdApuestaPartido" />
+    </Key>
+    <Property Name="IdApuestaPartido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdPartido" Type="int" Nullable="false" />
+    <Property Name="Puntaje" Type="int" Nullable="false" />
+    <Property Name="MarcadorLocal" Type="int" Nullable="false" />
+    <Property Name="MarcadorVisitante" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Equipo">
+    <Key>
+      <PropertyRef Name="IdEquipo" />
+    </Key>
+    <Property Name="IdEquipo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RutaImagen" Type="varchar" MaxLength="200" />
+    <Property Name="IdGrupo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EquipoPartido">
+    <Key>
+      <PropertyRef Name="IdEquipoPartido" />
+    </Key>
+    <Property Name="IdEquipoPartido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdEquipo" Type="int" Nullable="false" />
+    <Property Name="IdPartido" Type="int" Nullable="false" />
+    <Property Name="Puntos" Type="int" Nullable="false" />
+    <Property Name="Goles" Type="int" Nullable="false" />
+    <Property Name="GolesContra" Type="int" Nullable="false" />
+    <Property Name="Ubicacion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FasePartido">
+    <Key>
+      <PropertyRef Name="IdFasePartido" />
+    </Key>
+    <Property Name="IdFasePartido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="IdGrupo" />
+    </Key>
+    <Property Name="IdGrupo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Partido">
+    <Key>
+      <PropertyRef Name="IdPartido" />
+    </Key>
+    <Property Name="IdPartido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MVCpruebas.dbo.PuntajeApuesta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PuntajeApuesta">
+    <Key>
+      <PropertyRef Name="IdTipoPuntaje" />
+      <PropertyRef Name="IdApuestaPartido" />
+    </Key>
+    <Property Name="IdTipoPuntaje" Type="int" Nullable="false" />
+    <Property Name="IdApuestaPartido" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MVCpruebas.dbo.PuntajePartido' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PuntajePartido">
+    <Key>
+      <PropertyRef Name="IdTipoPuntaje" />
+      <PropertyRef Name="IdEquipoPartido" />
+    </Key>
+    <Property Name="IdTipoPuntaje" Type="int" Nullable="false" />
+    <Property Name="IdEquipoPartido" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoPuntaje">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Puntos" Type="int" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Contrasena" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sexo" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="Modulo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cedula" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ApuestaPartido_Partido">
+    <End Role="Partido" Type="MVCpruebasModel.Store.Partido" Multiplicity="1" />
+    <End Role="ApuestaPartido" Type="MVCpruebasModel.Store.ApuestaPartido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partido">
+        <PropertyRef Name="IdPartido" />
+      </Principal>
+      <Dependent Role="ApuestaPartido">
+        <PropertyRef Name="IdPartido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApuestaPartido_Usuario">
+    <End Role="Usuario" Type="MVCpruebasModel.Store.Usuario" Multiplicity="1" />
+    <End Role="ApuestaPartido" Type="MVCpruebasModel.Store.ApuestaPartido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="ApuestaPartido">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_Grupo">
+    <End Role="Grupo" Type="MVCpruebasModel.Store.Grupo" Multiplicity="1" />
+    <End Role="Equipo" Type="MVCpruebasModel.Store.Equipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="IdGrupo" />
+      </Principal>
+      <Dependent Role="Equipo">
+        <PropertyRef Name="IdGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquipoPartido_Equipo">
+    <End Role="Equipo" Type="MVCpruebasModel.Store.Equipo" Multiplicity="1" />
+    <End Role="EquipoPartido" Type="MVCpruebasModel.Store.EquipoPartido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipo">
+        <PropertyRef Name="IdEquipo" />
+      </Principal>
+      <Dependent Role="EquipoPartido">
+        <PropertyRef Name="IdEquipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquipoPartido_Partido">
+    <End Role="Partido" Type="MVCpruebasModel.Store.Partido" Multiplicity="1" />
+    <End Role="EquipoPartido" Type="MVCpruebasModel.Store.EquipoPartido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partido">
+        <PropertyRef Name="IdPartido" />
+      </Principal>
+      <Dependent Role="EquipoPartido">
+        <PropertyRef Name="IdPartido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Partido_FasePartido">
+    <End Role="FasePartido" Type="MVCpruebasModel.Store.FasePartido" Multiplicity="1" />
+    <End Role="Partido" Type="MVCpruebasModel.Store.Partido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FasePartido">
+        <PropertyRef Name="IdFasePartido" />
+      </Principal>
+      <Dependent Role="Partido">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PuntajeApuesta_ApuestaPartido">
+    <End Role="ApuestaPartido" Type="MVCpruebasModel.Store.ApuestaPartido" Multiplicity="1" />
+    <End Role="PuntajeApuesta" Type="MVCpruebasModel.Store.PuntajeApuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApuestaPartido">
+        <PropertyRef Name="IdApuestaPartido" />
+      </Principal>
+      <Dependent Role="PuntajeApuesta">
+        <PropertyRef Name="IdApuestaPartido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PuntajeApuesta_TipoPuntaje">
+    <End Role="TipoPuntaje" Type="MVCpruebasModel.Store.TipoPuntaje" Multiplicity="1" />
+    <End Role="PuntajeApuesta" Type="MVCpruebasModel.Store.PuntajeApuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPuntaje">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PuntajeApuesta">
+        <PropertyRef Name="IdTipoPuntaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PuntajePartido_ApuestaPartido">
+    <End Role="EquipoPartido" Type="MVCpruebasModel.Store.EquipoPartido" Multiplicity="1" />
+    <End Role="PuntajePartido" Type="MVCpruebasModel.Store.PuntajePartido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipoPartido">
+        <PropertyRef Name="IdEquipoPartido" />
+      </Principal>
+      <Dependent Role="PuntajePartido">
+        <PropertyRef Name="IdEquipoPartido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PuntajePartido_TipoPuntaje">
+    <End Role="TipoPuntaje" Type="MVCpruebasModel.Store.TipoPuntaje" Multiplicity="1" />
+    <End Role="PuntajePartido" Type="MVCpruebasModel.Store.PuntajePartido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPuntaje">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PuntajePartido">
+        <PropertyRef Name="IdTipoPuntaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

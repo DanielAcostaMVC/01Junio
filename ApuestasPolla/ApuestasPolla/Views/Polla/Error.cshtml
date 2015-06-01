@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Error";
+}
+
+@{
+    Layout = "";
+}
+
+<style>
+    .InformacionUsuario {
+        background: white;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        width: 900px;
+        padding:5px;
+    }
+    h2 {
+        font-family: 'Alkidenz';
+    }
+    a {
+        color:white;
+    }
+</style>
+
+<div class="InformacionUsuario">
+    <table>
+        <tr>
+            <td><img src="~/Image/Banderas/ARG.png" /></td>
+            <td><img src="~/Image/Banderas/BOL.png" /></td>
+            <td><img src="~/Image/Banderas/BRA.png" /></td>
+            <td><img src="~/Image/Banderas/CHL.png" /></td>
+            <td><img src="~/Image/Banderas/COL.png" /></td>
+            <td><img src="~/Image/Banderas/ECU.png" /></td>
+            <td><h2 style="font-family: 'Sofia';">El usuario o la contraseña son incorrectos.</h2></td>
+            <td><img src="~/Image/Banderas/JAM.png" /></td>
+            <td><img src="~/Image/Banderas/MEX.png" /></td>
+            <td><img src="~/Image/Banderas/PAR.png" /></td>
+            <td><img src="~/Image/Banderas/PER.png" /></td>
+            <td><img src="~/Image/Banderas/URU.png" /></td>
+            <td><img src="~/Image/Banderas/VEN.png" /></td>
+        </tr>
+    </table>   
+    <div id="BotonRegresarLogin" class="BotonLogin">@Html.ActionLink("Regresar", "Index", "Home")</div>
+</div>
+
+<script type="text/javascript">
+    PollaScripts.CenterContainer();
+</script>

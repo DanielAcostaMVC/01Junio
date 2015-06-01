@@ -1,0 +1,83 @@
+﻿@model ApuestasPolla.Models.EquipoPartido
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>EquipoPartido</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdEquipoPartido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdEquipoPartido)
+            @Html.ValidationMessageFor(model => model.IdEquipoPartido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdEquipo, "Equipo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdEquipo", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdEquipo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdPartido, "Partido")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdPartido", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdPartido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Puntos)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Puntos)
+            @Html.ValidationMessageFor(model => model.Puntos)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Goles)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Goles)
+            @Html.ValidationMessageFor(model => model.Goles)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GolesContra)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GolesContra)
+            @Html.ValidationMessageFor(model => model.GolesContra)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ubicacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ubicacion)
+            @Html.ValidationMessageFor(model => model.Ubicacion)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

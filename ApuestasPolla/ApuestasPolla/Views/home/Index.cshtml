@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+ <script type="text/javascript">
+        $(window).resize(function () {
+            PollaScripts.CenterGeneralContainer('ContenedorDatos');
+        });
+
+        $(document).ready(function () {
+            PollaScripts.CenterGeneralContainer('ContenedorDatos');
+            $("#BotonLogin").click(function () {
+                if (PollaScripts.ValidarInputs()) {
+                    var Usuarios = $("#usuario").val();
+                    var Contraseña = $("#contraseña").val();
+                    PollaMetodos.Login(Usuarios, Contraseña);
+                }
+            });
+        });
+    </script>
+
+<div class="bodyBackground ContenedorGeneral" style="height:100vh">
+    <div id="ContenedorDatos" class="ContenedorLogin" align="center">
+        <img src="~/Image/sincoLogo.png" />
+        <input id="usuario" placeholder="Usuario" />
+        <input id="contraseña" type="password" placeholder="Contraseña" />
+        <div id="BotonLogin" class="BotonLogin">Ingresar</div>
+        <br />
+        <div class="MensajeRegistrarse">No tiene una cuenta? @Html.ActionLink("Regístrese aquí.", "Create", "Usuario")</div>
+        <div id="LabelError" class="MensajeError"></div>
+    </div>
+</div>

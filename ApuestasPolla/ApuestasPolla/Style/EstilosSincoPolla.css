@@ -1,0 +1,122 @@
+﻿@font-face {
+    font-family: 'Junction';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../Fuentes/Junction.otf');
+}
+
+@font-face {
+    font-family: 'Lavanderia';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../Fuentes/Lavanderia_Personal_License/Lavanderia Delicate.otf');
+}
+
+@font-face {
+    font-family: 'Ranger';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../Fuentes/Ranger_Personal_License/Ranger_Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Sofia';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../Fuentes/Sofia-Regular.otf');
+}
+
+
+.bodyBackground {
+    background-color: #46474d;
+    color:#15af90;
+}
+
+.ContenedorGeneral {
+    float: left;
+    width: 100%;
+}
+
+.ContenedorLogin {
+    min-width: 300px;
+}
+
+input {
+    background-color: white;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 300px;
+    margin-top: 5px;
+}
+
+.BotonLogin {
+    background-color:#008cc4;
+    border-color:#008cc4;
+    color: white;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 300px;
+    margin-top: 5px;
+}
+
+    .BotonLogin:hover {
+        background-color: #15af90;
+    }
+
+.Error {
+    border: 2px solid #FF8181 !important;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.MensajeError {
+    color: #FF8181;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    display: none;
+    width: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: #15af90;
+}
+
+.MensajeRegistrarse {
+    color:white; 
+    margin-top: 15px;
+}
+
+.ContenedorPaginas {
+    background: none repeat scroll 0 0 white;
+    border-radius: 9px;
+    padding: 23px;
+    width: 800px;
+    border:1px solid black
+}
+
+.TituloPagina {
+    font-family: 'Sofia';
+    color:#008cc4;
+    text-align:center;
+}

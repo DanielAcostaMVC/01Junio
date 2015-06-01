@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46447eb112344b6c891ebe44e04070ac" Name="Diagram1">
+        <EntityTypeShape EntityType="MVCpruebasModel.ApuestaPartido" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.Equipo" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.EquipoPartido" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.FasePartido" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.Grupo" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.Partido" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.TipoPuntaje" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCpruebasModel.Usuario" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MVCpruebasModel.FK_ApuestaPartido_Partido" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.FK_ApuestaPartido_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.FK_Equipo_Grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.FK_EquipoPartido_Equipo" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.FK_EquipoPartido_Partido" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.FK_Partido_FasePartido" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.PuntajeApuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCpruebasModel.PuntajePartido" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,64 @@
+﻿@model ApuestasPolla.Models.EquipoPartido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>EquipoPartido</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdEquipoPartido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdEquipoPartido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Equipo.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Equipo.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Partido.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Partido.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Puntos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Puntos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Goles)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Goles)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GolesContra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GolesContra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ubicacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ubicacion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

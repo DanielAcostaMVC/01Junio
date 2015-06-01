@@ -1,0 +1,43 @@
+﻿@model ApuestasPolla.Models.Equipo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Equipo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdEquipo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdEquipo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RutaImagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RutaImagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grupo.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.Descripcion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

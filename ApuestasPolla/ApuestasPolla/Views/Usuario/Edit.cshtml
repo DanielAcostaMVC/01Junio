@@ -1,0 +1,148 @@
+﻿@model ApuestasPolla.Models.Usuario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    div {
+        color: black;
+    }
+
+    input {
+        padding: 0;
+    }
+
+    .CampoTexto {
+        color: #15af90;
+        float: left;
+        font-family: sofia;
+        padding-top: 7px;
+        width: 170px;
+    }
+
+    .CampoValor {
+        float: left;
+    }
+
+    .Mensaje {
+        color: #ff8181;
+        padding-left: 170px;
+    }
+</style>
+<div class="bodyBackground ContenedorGeneral" style="height: 100vh;">
+    <div id="ContenedorRegistro" class="ContenedorPaginas">
+        <h2 class="TituloPagina">EDICIÓN DE USUARIOS</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div style="display:none"> 
+                 @Html.EditorFor(model => model.IdUsuario)
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Usuario1)
+                </div>
+                <div class="CampoValor">
+                    @Html.EditorFor(model => model.Usuario1)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Contrasena)
+                </div>
+                <div class="CampoValor">
+                    @Html.EditorFor(model => model.Contrasena)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Nombre)
+                </div>
+                <div class="CampoValor">
+                    @Html.EditorFor(model => model.Nombre)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Apellido)
+                </div>
+                <div class="CampoValor">
+                    @Html.EditorFor(model => model.Apellido)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Sexo)
+                </div>
+                <div class="CampoValor" style="margin-top: 11px; margin-bottom: 5px;">
+                    @Html.DropDownListFor(model => model.Sexo, Model.ListaSexos)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Modulo)
+                </div>
+                <div class="CampoValor">
+                    @Html.EditorFor(model => model.Modulo)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="CampoTexto">
+                    @Html.LabelFor(model => model.Cedula)
+                </div>
+                <div class="CampoValor">
+                    @Html.EditorFor(model => model.Cedula)
+
+                </div>
+            </div>
+            <div class="ContenedorGeneral">
+                <p style="margin-left: 170px;">
+                    <input class="BotonLogin" type="submit" value="Editar" />
+                </p>
+            </div>
+            <div class="ContenedorGeneral">
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Usuario1)
+                </div>
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Contrasena)
+                </div>
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Nombre)
+                </div>
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Apellido)
+                </div>
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Sexo)
+                </div>
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Modulo)
+                </div>
+                <div class="ContenedorGeneral Mensaje">
+                    @Html.ValidationMessageFor(model => model.Cedula)
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Lista de usuarios", "Index")
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    PollaScripts.CenterGeneralContainer('ContenedorRegistro');
+    $(window).resize(function () {
+        PollaScripts.CenterGeneralContainer('ContenedorRegistro');
+    });
+</script>
+
